@@ -1,0 +1,19 @@
+@startuml
+object "CountDown : Program" as CountDown
+object "CountUp : Program" as CountUp
+object "HaltChecker" as HaltChecker
+object "Reverser" as Reverser
+object "Input : String" as Input
+class Program {
+    +name: String
+    +run(input: String): void
+}
+
+CountDown --|> Program : instancia de
+CountUp --|> Program : instancia de
+HaltChecker --> Program : analiza
+HaltChecker --> Input : usa
+Reverser --> HaltChecker : usa
+Reverser --> Program : pasa como entrada
+
+@enduml
