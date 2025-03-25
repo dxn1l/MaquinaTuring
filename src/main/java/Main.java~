@@ -6,9 +6,7 @@ public class Main {
     public static void main(String[] args) {
         ProgramFactory factory;
 
-        // Cambia esto para probar CountDown o CountUp
         factory = new CountDownFactory();
-        // factory = new CountUpFactory();
 
         Program program = factory.createProgram();
         program.run("10");
