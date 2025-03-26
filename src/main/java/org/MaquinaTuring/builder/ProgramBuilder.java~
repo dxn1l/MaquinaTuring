@@ -1,0 +1,8 @@
+package org.MaquinaTuring.builder;
+
+
+public interface ProgramBuilder {
+    void buildName();
+    void buildRunLogic();
+    Program getProgram();
+}
