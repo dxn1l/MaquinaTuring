@@ -1,0 +1,19 @@
+package program;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
+
+class CountUpProgramTest {
+
+    @Test
+    void testRunCountsUpLimitedSteps() {
+        CountUpProgram program = new CountUpProgram();
+        assertTimeoutPreemptively(java.time.Duration.ofSeconds(1), () -> {
+            Thread t = new Thread(() -> program.run("1"));
+            t.start();
+            Thread.sleep(100);
+            t.stop();
+        });
+    }
+}
