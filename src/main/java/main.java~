@@ -55,7 +55,7 @@ public class main {
     }
 
     public static void comparePatterns() {
-        String tipo = "CountDown";
+        String tipo = "CountUp"; 
 
         long startAF = System.nanoTime();
         Program af = AbstractFactorySelector.create(tipo);
