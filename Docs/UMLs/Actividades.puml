@@ -1,0 +1,32 @@
+@startuml
+start
+    :Definir programas CountDown y CountUp;
+    :Implementar HaltChecker;
+    :Evaluar si el programa se detiene;
+
+    if (¿Se detiene?) then (Sí)
+        :HaltChecker dice "Para";
+    else (No)
+        :HaltChecker dice "Nunca";
+    endif
+
+    :Implementar Reverser;
+    :Reverser usa HaltChecker para decidir;
+
+    if (¿HaltChecker dice "Para"?) then (Sí)
+        :Reverser entra en bucle infinito;
+    else (No)
+        :Reverser se detiene;
+    endif
+
+    :Implementar con patrones de diseño;
+    fork
+        :Usar Abstract Factory;
+    fork again
+        :Usar Builder;
+    fork again
+        :Usar Prototype;
+    end fork
+
+end
+@enduml

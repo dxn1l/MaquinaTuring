@@ -1,0 +1,36 @@
+@startuml
+
+interface Program {
+    +run(String input): void
+    +getName(): String
+}
+
+class CountDown implements Program {
+    -int start
+    +run(String input): void
+    +getName(): String
+}
+
+class CountUp implements Program {
+    -int start
+    +run(String input): void
+    +getName(): String
+}
+
+class HaltChecker {
+    +willHalt(Program program, String input): boolean
+}
+
+class Reverser implements Program {
+    +run(String input): void
+    +getName(): String
+    -haltChecker: HaltChecker
+}
+
+Program <|.. CountDown
+Program <|.. CountUp
+Program <|.. Reverser
+
+Reverser --> HaltChecker : usa
+
+@enduml
